@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <title>Home Page</title>
+    </head>
+    <body>
+        <main class="container">
+            <h3 class="my-3">Create Data <a href="/home" class="float-end btn btn-sm btn-success mt-2">Home Page</a></h3>
+            {% for message in messages %}
+            <p class="text-success">{{message}}</p>
+            {% endfor %}
+            <form method="post" action="">
+                {% csrf_token %}
+                <table class="table table-bordered">
+                    {{form.as_table}}
+                    <tr>
+                        <td colspan="2"><input type="submit" class="btn btn-primary" /></td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+    </body>
+</html>
